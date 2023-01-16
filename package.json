@@ -1,5 +1,5 @@
 {
-  "name": "@hackariens/github",
+  "name": "@hackariens/prestashop",
   "version": "1.0.0",
   "description": "Template de nouveau repository",
   "scripts": {
@@ -23,15 +23,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hackariens/github.git"
+    "url": "git+https://github.com/hackariens/prestashop.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hackariens/github/issues"
+    "url": "https://github.com/hackariens/prestashop/issues"
   },
-  "homepage": "https://github.com/hackariens/github#readme",
+  "homepage": "https://github.com/hackariens/prestashop#readme",
   "dependencies": {
     "korojscommands": "^1.2.7"
   }
