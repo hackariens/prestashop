@@ -19,6 +19,8 @@ jobs:
           ref: 'v2.0'
           repository: koromerzhin/lampy
           path: lampy
+      - name: 'set .env'
+        run: 'cp .env.example .env'
       - name: Install npm dependencies
         run: npm install
       - name: 'SET BDD'
