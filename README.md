@@ -1,16 +1,16 @@
-# Welcome to @koromerzhin/template-prestashop 👋
+# Welcome to @hackariens/prestashop 👋
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/koromerzhin/template-prestashop/graphs/commit-activity)
-![Continuous Integration](https://github.com/koromerzhin/template-prestashop/workflows/Continuous%20Integration/badge.svg?branch=develop)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/hackariens/prestashop/graphs/commit-activity)
+![Continuous Integration](https://github.com/hackariens/prestashop/workflows/Continuous%20Integration/badge.svg?branch=develop)
 
 > Template de nouveau repository
 
-## 🏠 [Homepage](https://github.com/koromerzhin/template-prestashop#readme)
+## 🏠 [Homepage](https://github.com/hackariens/prestashop#readme)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#-contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)]
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Need
@@ -23,27 +23,20 @@ Software:
 ## Download
 
 ```sh
-git clone git@github.com:koromerzhin/template-prestashop.git template-prestashop
-cd template-prestashop
-git submodule update --init
+git clone git@github.com:hackariens/prestashop.git prestashop
+cd prestashop
 ```
 
 ## Install
 
 ```sh
-make install
+npm install
 ```
 
-## after git add
+## Launch
 
 ```sh
-make git check
-```
-
-## Help
-
-```sh
-make help
+npm run exec
 ```
 
 ## Author
@@ -59,9 +52,9 @@ make help
 
 Contributions, issues and feature requests are welcome!
 Feel free to check
-[issues page](https://github.com/koromerzhin/template-prestashop/issues).
+[issues page](https://github.com/hackariens/prestashop/issues).
 You can also take a look at the
-[contributing guide](https://github.com/koromerzhin/template-prestashop/blob/develop/CONTRIBUTING.md).
+[contributing guide](https://github.com/hackariens/prestashop/blob/develop/CONTRIBUTING.md).
 
 ## Show your support
 
@@ -72,7 +65,7 @@ Give a ⭐️ if this project helped you!
 Copyright © 2019 [koromerzhin](https://github.com/koromerzhin).
 
 This project is
-[MIT](https://github.com/koromerzhin/template-prestashop/blob/develop/LICENSE) licensed.
+[MIT](https://github.com/hackariens/prestashop/blob/develop/LICENSE) licensed.
 
 ## ✨ Contributors
 

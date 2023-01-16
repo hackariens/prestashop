@@ -1,0 +1,24 @@
+version: "3.4"
+
+networks:
+  proxylampy:
+    external: true
+  serverlampy:
+    external: true
+
+services:
+  apache:
+    networks:
+      - net
+      - proxylampy
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.prestashop.rule=Host(`prestashop.traefik.me`)"
+        - "traefik.http.routers.prestashop-tls.tls.domains[0].main=prestashop.traefik.me"
+        - "traefik.http.routers.prestashop.tls=true"
+        - "traefik.http.services.prestashop.loadbalancer.server.port=80"
+  phpfpm:
+    networks:
+      - net
+      - serverlampy
