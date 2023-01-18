@@ -26,6 +26,10 @@ git clone --recurse-submodules git@github.com:hackariens/prestashop.git prestash
 cd prestashop
 ```
 
+## Environnment
+
+Edit .env with .env.example
+
 ## Install
 
 ```sh
