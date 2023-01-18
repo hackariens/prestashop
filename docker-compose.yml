@@ -4,7 +4,6 @@ networks:
   net:
     driver: overlay
     attachable: true
-
 services:
   www:
     image: koromerzhin/phpfpm:8.1.6
@@ -18,5 +17,8 @@ services:
       - ${PWD}/apps:/var/www/:delegated
       - ${PWD}/conf/php.ini-development:/usr/local/etc/php/php.ini
       - ${PWD}/conf/docker-php-ram-limit.ini:/usr/local/etc/php/conf.d/docker-php-ram-limit.ini
+    networks:
+      - net
+  phpfpm:
     networks:
       - net
