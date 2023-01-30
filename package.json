@@ -14,6 +14,7 @@
     "composer:suggests": "docker exec -ti $(npx korojscommands docker_getname-container --container phpfpm) composer suggests --by-suggestion",
     "composer:update": "docker exec -ti $(npx korojscommands docker_getname-container --container phpfpm) composer update",
     "composer:validate": "docker exec -ti $(npx korojscommands docker_getname-container --container phpfpm) composer validate",
+    "create:apps": "wget https://github.com/PrestaShop/PrestaShop/releases/download/8.0.1/prestashop_8.0.1.zip -O prestashop.zip",
     "docker:deploy": "korojscommands docker_deploy",
     "docker:getpull-image": "korojscommands docker_getpull-image",
     "docker:ls": "korojscommands docker_ls",
@@ -34,6 +35,6 @@
   },
   "homepage": "https://github.com/hackariens/prestashop#readme",
   "dependencies": {
-    "korojscommands": "^1.2.11"
+    "korojscommands": "^1.2.12"
   }
 }
