@@ -16,7 +16,7 @@ services:
       - net
   phpfpm:
     image: koromerzhin/php:8.2.1-fpm
-    command: sh -c "composer install && php-fpm"
+    command: sh -c "php-fpm"
     volumes:
       - ${PWD}/apps:/var/www/:delegated
       - ${PWD}/conf/php.ini-development:/usr/local/etc/php/php.ini
