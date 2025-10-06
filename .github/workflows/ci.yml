@@ -82,7 +82,6 @@ jobs:
           task prestashop:getpull-image
           task create:apps
           task prestashop:getapacheconf
-          task prestashop:install-first
           task prestashop:deploy
           task prestashop:waiting
       
