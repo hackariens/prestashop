@@ -74,17 +74,17 @@ jobs:
       
       - name: Setup database and infrastructure
         run: |
-          task prestahop:copysql
+          task prestashop:copysql
           cd lampy && task lampy:exec
       
       - name: Deploy containers
         run: |
-          task prestahop:getpull-image
+          task prestashop:getpull-image
           task create:apps
-          task prestahop:getapacheconf
-          task prestahop:install-first
-          task prestahop:deploy
-          task prestahop:waiting
+          task prestashop:getapacheconf
+          task prestashop:install-first
+          task prestashop:deploy
+          task prestashop:waiting
       
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
