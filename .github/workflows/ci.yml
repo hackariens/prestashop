@@ -44,7 +44,7 @@ jobs:
         with:
           submodules: recursive
           repository: koromerzhin/lampy
-          ref: 'v4.0'
+          ref: '4.3'
           path: lampy
       
       # === BUILD PHASE ===
