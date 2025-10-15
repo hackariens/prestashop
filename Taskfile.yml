@@ -34,6 +34,13 @@ tasks:
     - task --list
     - echo ""
 
+  create:apps:
+    cmds:
+    - wget https://github.com/PrestaShop/PrestaShop/releases/download/8.0.1/prestashop_8.0.1.zip -O prestashop.zip
+    - unzip prestashop.zip -d unzip
+    - unzip unzip/prestashop.zip -d apps
+    - rm -rf unzip prestashop.zip
+
   lint:all:
     desc: "Exécute tous les linters disponibles"
     cmds:
@@ -132,6 +139,7 @@ tasks:
     silent: true
     cmds:
     - task: prestashop:copysql
+    - task: create:apps
     - task: prestashop:getpull-image
     - task: prestashop:getapacheconf
     - task: prestashop:deploy
