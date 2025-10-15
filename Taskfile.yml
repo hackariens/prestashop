@@ -13,14 +13,14 @@ includes:
 
 vars:
   # Variables avec valeurs par défaut depuis .env ou valeurs de fallback
-  PROJECT_NAME: '{{.PROJECT_NAME | default "prestahop"}}'
+  PROJECT_NAME: '{{.PROJECT_NAME | default "prestashop"}}'
   PROJECT_VERSION: '1.0.0'
   ENVIRONMENT: '{{.ENVIRONMENT | default "development"}}'
-  STACK_NAME: '{{.STACK | default "prestahop"}}'
+  STACK_NAME: '{{.STACK | default "prestashop"}}'
   FOLDERSQL: '{{.FOLDERSQL | default "database_init"}}'
   FILESQL: '{{.FILESQL | default "dump.sql"}}'
   FOLDERLAMPY: '{{.FOLDERLAMPY | default "lampy"}}'
-  SERVERNAME: '{{.SERVERNAME | default "prestahop.traefik.me"}}'
+  SERVERNAME: '{{.SERVERNAME | default "prestashop.traefik.me"}}'
   DOCKERCOMPOSEFILE: '{{.DOCKERCOMPOSEFILE | default "docker-compose.yml"}}'
 
 tasks:
@@ -54,16 +54,16 @@ tasks:
     cmds:
     - task: default
 
-  prestahop:getapacheconf:
+  prestashop:getapacheconf:
     desc: "Récupère la configuration Apache depuis l'image Docker"
     silent: true
     cmds:
     - rm -rf ./conf/apache2 || true
-    - docker create --name prestahop-php koromerzhin/php:8.4.3-apache
+    - docker create --name prestashop-php koromerzhin/php:8.4.3-apache
     - mkdir -p ./conf/apache2
-    - docker cp prestahop-php:/etc/apache2/sites-available/000-default.conf ./conf/apache2/000-default.conf
-    - docker cp prestahop-php:/etc/apache2/apache2.conf ./conf/apache2/apache2.conf
-    - docker rm -f prestahop-php
+    - docker cp prestashop-php:/etc/apache2/sites-available/000-default.conf ./conf/apache2/000-default.conf
+    - docker cp prestashop-php:/etc/apache2/apache2.conf ./conf/apache2/apache2.conf
+    - docker rm -f prestashop-php
 
     - sed -ri -e 's|\$\{APACHE_DOCUMENT_ROOT\}|/var/www/public|g' ./conf/apache2/000-default.conf
     - sed -ri -e 's|#ServerName www.example.com|ServerName {{.SERVERNAME}}|g' ./conf/apache2/000-default.conf
@@ -77,8 +77,8 @@ tasks:
       #\
       ServerName {{.SERVERNAME}}' ./conf/apache2/apache2.conf
 
-  prestahop:copysql:
-    desc: "Copie le fichier SQL de dump dans le dossier prestahop"
+  prestashop:copysql:
+    desc: "Copie le fichier SQL de dump dans le dossier prestashop"
     silent: true
     cmds:
     - task: utils:file:copy
@@ -87,7 +87,7 @@ tasks:
         DEST_DIR: "{{.FOLDERLAMPY}}/mariadb_init/"
         FORCE: true
 
-  prestahop:getpull-image:
+  prestashop:getpull-image:
     desc: "Télécharge les images Docker définies dans le docker-compose.yml"
     silent: true
     cmds:
@@ -95,7 +95,7 @@ tasks:
       vars:
         COMPOSE_FILE: "{{.DOCKERCOMPOSEFILE}}"
 
-  prestahop:deploy:
+  prestashop:deploy:
     desc: "Déploie les stacks Docker définies dans les fichiers docker-compose"
     silent: true
     cmds:
@@ -104,13 +104,13 @@ tasks:
         COMPOSE_FILE: "{{.DOCKERCOMPOSEFILE}}"
         STACK_NAME: "{{.STACK_NAME}}"
 
-  prestahop:install-first:
+  prestashop:install-first:
     desc: "Installation initiale de Composer et des dépendances"
     silent: true
     cmds:
     - docker run --rm -v $(pwd)/apps:/var/www -w /var/www koromerzhin/php:8.4.3-apache composer install
 
-  prestahop:waiting:
+  prestashop:waiting:
     desc: "Attend que les services soient opérationnels"
     silent: true
     cmds:
@@ -119,7 +119,7 @@ tasks:
         CONTAINERS: "www"
         STACK_NAME: "{{.STACK_NAME}}"
 
-  prestahop:ls:
+  prestashop:ls:
     desc: "Liste les stacks et services Docker"
     silent: true
     cmds:
@@ -127,18 +127,18 @@ tasks:
       vars:
         STACK_NAME: "{{.STACK_NAME}}"
 
-  prestahop:exec:
+  prestashop:exec:
     desc: "Exécute une commande dans un conteneur en cours d'exécution"
     silent: true
     cmds:
-    - task: prestahop:copysql
-    - task: prestahop:getpull-image
-    - task: prestahop:getapacheconf
-    - task: prestahop:deploy
-    - task: prestahop:waiting
-    - task: prestahop:ls
+    - task: prestashop:copysql
+    - task: prestashop:getpull-image
+    - task: prestashop:getapacheconf
+    - task: prestashop:deploy
+    - task: prestashop:waiting
+    - task: prestashop:ls
 
-  prestahop:download-phar:
+  prestashop:download-phar:
     desc: "Télécharger les différents fichiers phar"
     silent: true
     cmds:
@@ -146,16 +146,16 @@ tasks:
       vars:
         TOOLS_DIR: ./../apps
 
-  prestahop:bash:
+  prestashop:bash:
     desc: "Ouvre un shell bash dans le conteneur www"
     silent: true
     cmds:
     - task: docker:stack:shell
       vars:
-        STACK_NAME: "prestahop"
+        STACK_NAME: "prestashop"
         SERVICE_NAME: "www"
 
-  prestahop:cmd-exec:
+  prestashop:cmd-exec:
     desc: "Lance une commande"
     silent: true
     vars:
@@ -163,7 +163,7 @@ tasks:
     cmds:
     - task: docker:stack:exec
       vars:
-        STACK_NAME: "prestahop"
+        STACK_NAME: "prestashop"
         SERVICE_NAME: "www"
         COMMAND: "{{.COMMAND}}"
         INTERACTIVE: "{{.INTERACTIVE}}"
@@ -174,7 +174,7 @@ tasks:
     vars:
       CMD: '{{.CMD | default ""}}'
     cmds:
-    - task: prestahop:cmd-exec
+    - task: prestashop:cmd-exec
       vars:
         COMMAND: "composer {{.CMD}}"
 
