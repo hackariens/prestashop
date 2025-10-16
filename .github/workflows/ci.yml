@@ -89,7 +89,7 @@ jobs:
       
       # === BUILD PHASE ===
       - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
+        run: npm install --prefer-offline --no-audit
       
       - name: Setup environment files
         run: |
