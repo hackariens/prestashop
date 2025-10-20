@@ -29,6 +29,6 @@
     "readme-md-generator": "^1.0.0",
     "release-it": "^19.0.5",
     "semantic-git-commit-cli": "^3.7.0",
-    "yaml": "^2.8.1"
+    "yaml-lint": "^1.7.0"
   }
 }
