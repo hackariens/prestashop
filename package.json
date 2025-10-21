@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Template de nouveau repository",
   "scripts": {
-    "lint:markdown": "markdownlint README.md",
     "release": "release-it"
   },
   "repository": {
@@ -18,17 +17,17 @@
   },
   "homepage": "https://github.com/hackariens/prestashop#readme",
   "devDependencies": {
-    "all-contributors-cli": "^6.26.1",
-    "cypress": "^15.3.0",
-    "dotenv": "^17.2.3",
-    "generate-changelog": "^1.8.0",
-    "gitmoji-changelog": "^2.3.0",
-    "jscpd": "^4.0.5",
-    "license-checker": "^25.0.1",
-    "markdownlint-cli": "^0.45.0",
-    "readme-md-generator": "^1.0.0",
-    "release-it": "^19.0.5",
-    "semantic-git-commit-cli": "^3.7.0",
-    "yaml-lint": "^1.7.0"
+    "all-contributors-cli": "6.26.",
+    "cypress": "15.3.*",
+    "dotenv": "17.2.*",
+    "generate-changelog": "1.8.*",
+    "gitmoji-changelog": "2.3.*",
+    "jscpd": "4.0.*",
+    "license-checker": "25.0.*",
+    "markdownlint-cli": "0.45.*",
+    "readme-md-generator": "1.0.*",
+    "release-it": "19.0.*",
+    "semantic-git-commit-cli": "3.7.*",
+    "yaml-lint": "1.7.*"
   }
 }
