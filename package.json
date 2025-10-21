@@ -24,10 +24,8 @@
     "gitmoji-changelog": "2.3.*",
     "jscpd": "4.0.*",
     "license-checker": "25.0.*",
-    "markdownlint-cli": "0.45.*",
     "readme-md-generator": "1.0.*",
     "release-it": "19.0.*",
-    "semantic-git-commit-cli": "3.7.*",
-    "yaml-lint": "1.7.*"
+    "semantic-git-commit-cli": "3.7.*"
   }
 }
