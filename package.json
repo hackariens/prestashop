@@ -18,14 +18,14 @@
   "homepage": "https://github.com/hackariens/prestashop#readme",
   "devDependencies": {
     "all-contributors-cli": "6.26.",
-    "cypress": "15.5.*",
-    "dotenv": "17.2.*",
+    "cypress": "15.21.*",
+    "dotenv": "17.4.*",
     "generate-changelog": "1.8.*",
     "gitmoji-changelog": "2.3.*",
-    "jscpd": "4.0.*",
+    "jscpd": "4.3.*",
     "license-checker": "25.0.*",
     "readme-md-generator": "1.0.*",
-    "release-it": "19.0.*",
+    "release-it": "19.2.*",
     "semantic-git-commit-cli": "3.7.*"
   }
 }
