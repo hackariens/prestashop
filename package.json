@@ -19,7 +19,7 @@
   "devDependencies": {
     "all-contributors-cli": "6.26.",
     "cypress": "16.1.*",
-    "dotenv": "17.4.*",
+    "dotenv": "18.0.*",
     "generate-changelog": "1.8.*",
     "gitmoji-changelog": "2.3.*",
     "jscpd": "5.2.*",
